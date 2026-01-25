@@ -1,4 +1,5 @@
 
+
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Activities from './components/Activities';
@@ -10,9 +11,9 @@ import Workouts from './components/Workouts';
 function App() {
   return (
     <Router>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">Octofit Tracker</Link>
+          <Link className="navbar-brand fw-bold" to="/">Octofit Tracker</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -27,14 +28,14 @@ function App() {
           </div>
         </div>
       </nav>
-      <div className="container mt-4">
+      <div className="container">
         <Routes>
           <Route path="/activities" element={<Activities />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/teams" element={<Teams />} />
           <Route path="/users" element={<Users />} />
           <Route path="/workouts" element={<Workouts />} />
-          <Route path="/" element={<h2>Welcome to Octofit Tracker!</h2>} />
+          <Route path="/" element={<div className="text-center mt-5"><h1 className="display-4">Welcome to <span className="text-primary">Octofit Tracker</span>!</h1><p className="lead">Track your fitness journey with style.</p></div>} />
         </Routes>
       </div>
     </Router>
